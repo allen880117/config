@@ -16,6 +16,7 @@ set number     " Show row number
 hi  LineNr cterm=none ctermbg=Black ctermfg=Blue  
 set cursorline " Highlight the line cursor at
 " hi  Cursorline cterm=none ctermbg=DarkBlue ctermfg=White
+set hlsearch
 
 " '''''''''''
 " Key Mapping
@@ -44,4 +45,12 @@ vnoremap <C-f> <Esc>/
 filetype indent on " Indent according to file type (.c, .cpp, ...)
 " jump to the last position when repoening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" ''''''
+" Plugin
+" ''''''
+" NERDtree
+packadd! nerdtree
+" autocmd VimEnter * NERDTree
+map <F5> :NERDTreeToggle<CR>
 
